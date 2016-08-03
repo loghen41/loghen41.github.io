@@ -10,6 +10,12 @@
                 if ($localStorage.language) {
                     $translate.use($localStorage.language);
                 }
+                if(!$localStorage.style) {
+                    $localStorage.style =  {
+                        style: 'Bamboo',
+                        url: '../images/backgrounds/bamboo.jpg'
+                    }
+                }
                 //This IF-Statement establishes the user data on the very first load
                 if (!$localStorage.lists) {
                     $localStorage.lists = [
