@@ -4,12 +4,13 @@
 
 
             //$localStorage.lists = undefined;
-
+            $localStorage.style = undefined;
             //This function establishes the parameters for each load
             function onInit () {
                 if ($localStorage.language) {
                     $translate.use($localStorage.language);
                 }
+            //This IF-Statement establishes the default user Style
                 if(!$localStorage.style) {
                     $localStorage.style =  {
                         style: 'Bamboo',
@@ -89,6 +90,7 @@
                 }
             ];
             var selectedStyle = $localStorage.style;
+            console.log(selectedStyle);
 
             //all Serivce functions are shown according to alphabetical order
 
