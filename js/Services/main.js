@@ -4,7 +4,7 @@
 
 
             //$localStorage.lists = undefined;
-            //$localStorage.style = undefined;
+            $localStorage.style = undefined;
             //This function establishes the parameters for each load
             function onInit () {
                 if ($localStorage.language) {
