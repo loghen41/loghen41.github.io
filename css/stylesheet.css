@@ -67,6 +67,10 @@
 
 /* This is the actual App Styling */
 
+body {
+    min-height: 100vh;
+}
+
 .backButton {
     margin-left: 5%;
     font-size: 2em;
