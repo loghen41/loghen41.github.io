@@ -9,7 +9,7 @@
             <button class="fullButton" type="submit">{{'TASKADD' | translate}}</button>
         </form>
         <no-data ng-if="!vm.lists || list.taskLists.length === 0"></no-data>
-        <div ng-repeat="task in list.taskLists">
+        <div id="tastDiv_{{$index}}" ng-repeat="task in list.taskLists">
             <div id="element_{{$index}}" class='elementDiv' ng-class="{onDelete : task.deleting}">
                 <div class="childDiv">
                     <img ng-click='vm.markComplete(task);' class='icon' ng-src="{{task.icon}}"/>
