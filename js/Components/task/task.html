@@ -5,8 +5,8 @@
         </div>
 
         <form ng-submit="vm.addTask(list, vm.newTask)">
-            <input id="fullInput" class="fullInput" placeholder="{{'TASKPLACEHOLDER' | translate}}" ng-model="vm.newTask" required>
-            <button id="fullButton" class="fullButton" type="submit">{{'TASKADD' | translate}}</button>
+            <input id="fullInput_{{$index}}" class="fullInput" placeholder="{{'TASKPLACEHOLDER' | translate}}" ng-model="vm.newTask" required>
+            <button id="fullButton_{{$index}}" class="fullButton" type="submit">{{'TASKADD' | translate}}</button>
         </form>
         <no-data ng-if="!vm.lists || list.taskLists.length === 0"></no-data>
         <div id="taskDiv_{{$index}}" ng-repeat="task in list.taskLists">
