@@ -10,19 +10,19 @@
         </form>
         <no-data ng-if="!vm.lists || list.taskLists.length === 0"></no-data>
         <div id="taskDiv_{{$index}}" ng-repeat="task in list.taskLists">
-            <div id="element_{{$index}}" class='elementDiv' ng-class="{onDelete : task.deleting}">
+            <div id="element_{{$parent.$index}}_{{$index}}" class='elementDiv' ng-class="{onDelete : task.deleting}">
                 <div class="childDiv">
-                    <img id="complete_{{$index}}" ng-click='vm.markComplete(task);' class='icon' ng-src="{{task.icon}}"/>
+                    <img id="complete_{{$parent.$index}}_{{$index}}" ng-click='vm.markComplete(task);' class='icon' ng-src="{{task.icon}}"/>
                     <span class="name" style="cursor: default">{{task.taskName | custom }}</span>
                 </div>
                 <div class='childDiv'>
-                    <button id="edit_{{$index}}" class="edit" ng-click="vm.openEdit(task);">{{'EDIT' | translate}}</button>
-                    <img id="delete_{{$index}}" class='icon delete' ng-click="vm.delete(task, list);" src="images/icons/delete.png"/>
+                    <button id="edit_{{$parent.$index}}_{{$index}}" class="edit" ng-click="vm.openEdit(task);">{{'EDIT' | translate}}</button>
+                    <img id="delete_{{$parent.$index}}_{{$index}}" class='icon delete' ng-click="vm.delete(task, list);" src="images/icons/delete.png"/>
                 </div>
             </div>
             <div ng-show="vm.selectedTask === task.taskName">
                 <form ng-submit="vm.edit(task, vm.newName);">
-                    <input id="editInput_{{$index}}" class="editInput" placeholder="{{'EDITTASKPLACEHOLDER' | translate}}" ng-model="vm.newName"
+                    <input id="editInput_{{$parent.$index}}_{{$index}}" class="editInput" placeholder="{{'EDITTASKPLACEHOLDER' | translate}}" ng-model="vm.newName"
                            required>
                     <button class="editInputButton" type="submit">{{'APPLY' | translate}}</button>
                 </form>
